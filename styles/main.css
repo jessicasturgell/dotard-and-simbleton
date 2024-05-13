@@ -17,4 +17,8 @@ body {
     background: steelblue;
     color: white;
     font-size: 30px;
-  }
+}
+
+.searchBar {
+    margin: 1rem 1rem 0 1rem;
+}
