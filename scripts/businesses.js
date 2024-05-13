@@ -8,8 +8,13 @@ export const businessesArray = () => {
             `
 
 businesses.forEach(business => {
+    /* CALCULATE ORDER SUMMARY */
+    let totalOrders = business.orders.reduce(
+        (currentTotal, nextValue) => currentTotal += nextValue,
+        0
+)
     html += `
-            <h2>${business.companyName}</h2>
+            <h2>${business.companyName} (${totalOrders.toLocaleString("en-US", { style: "currency", currency: "USD" })})</h2>
                 <section>
                     ${business.addressFullStreet}
                 </section>

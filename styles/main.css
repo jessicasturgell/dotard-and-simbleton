@@ -22,3 +22,17 @@ body {
 .searchBar {
     margin: 1rem 1rem 0 1rem;
 }
+
+.arrays {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.arrayColumn {
+    display: block;
+    margin: 1em 2em 2em 2em;
+}
+
+.foundBusiness {
+    margin: 2em;
+}

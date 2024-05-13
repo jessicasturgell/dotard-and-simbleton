@@ -19,9 +19,14 @@ let html = `
         <h1>Manufacturing Businesses</h2>
         `
 manufactingBusinesses.forEach(business => {
+        /* CALCULATE ORDER SUMMARY */
+        let totalOrders = business.orders.reduce(
+            (currentTotal, nextValue) => currentTotal += nextValue,
+            0
+        )
     if (business.manufacturingBoolean) {
         html += `
-            <h2>${business.companyName}</h2>
+            <h2>${business.companyName} (${totalOrders.toLocaleString("en-US", { style: "currency", currency: "USD" })})</h2>
             <section>
                 ${business.addressFullStreet}
             </section>

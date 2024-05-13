@@ -12,9 +12,19 @@ export const searchBar = (outEl) => {
                     business.companyName.includes(keyPressEvent.target.value)
             );
 
-            outEl.innerHTML = `
+            let totalOrders
+
+            if (foundBusiness) {
+                    /* CALCULATE ORDER SUMMARY */
+                    totalOrders = foundBusiness.orders.reduce(
+                    (currentTotal, nextValue) => currentTotal += nextValue,
+                     0
+                     )
+            }
+
+            outEl.innerHTML = `<div class='foundBusiness'>
                 <h2>
-                ${foundBusiness.companyName}
+                ${foundBusiness.companyName} (${totalOrders.toLocaleString("en-US", { style: "currency", currency: "USD" })})
                 </h2>
                 <section>
                 ${foundBusiness.addressFullStreet}
@@ -24,7 +34,7 @@ export const searchBar = (outEl) => {
                 ${foundBusiness.addressCity},
                 ${foundBusiness.addressStateCode}
                 ${foundBusiness.addressZipCode}
-                </section>
+                </section></div>
             `;
         }
     });

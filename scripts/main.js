@@ -12,7 +12,13 @@ const businesses = getBusinesses()
 searchBar(outEl)
 
 // generate html
-const html = businessesArray() + newYorkArray() + manufacturingArray() + agentsArray()
+const html = `
+            <div class="arrays">
+                <div class="arrayColumn">${businessesArray()}</div>
+                <div class="arrayColumn">${newYorkArray()}<br><br>${manufacturingArray()}</div>
+                <div class="arrayColumn">${agentsArray()}</div>
+            </div>
+            `
 
 // render html
 outEl.innerHTML = html
