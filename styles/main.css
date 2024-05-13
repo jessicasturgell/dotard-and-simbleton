@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header {
+    padding: 30px;
+    text-align: center;
+    background: steelblue;
+    color: white;
+    font-size: 30px;
+  }
